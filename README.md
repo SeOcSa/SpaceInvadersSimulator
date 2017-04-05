@@ -1,2 +1,2 @@
 # SpaceInvadersSimulator
-Using Reflection pattern in C#.
+Using Reflection in C#.
