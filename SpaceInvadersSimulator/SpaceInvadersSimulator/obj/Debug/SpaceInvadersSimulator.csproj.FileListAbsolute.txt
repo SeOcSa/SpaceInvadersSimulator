@@ -1,0 +1,6 @@
+C:\Users\Sebastian O. Sas\documents\visual studio 2015\Projects\SpaceInvadersSimulator\SpaceInvadersSimulator\bin\Debug\SpaceInvadersSimulator.exe.config
+C:\Users\Sebastian O. Sas\documents\visual studio 2015\Projects\SpaceInvadersSimulator\SpaceInvadersSimulator\bin\Debug\SpaceInvadersSimulator.exe
+C:\Users\Sebastian O. Sas\documents\visual studio 2015\Projects\SpaceInvadersSimulator\SpaceInvadersSimulator\bin\Debug\SpaceInvadersSimulator.pdb
+C:\Users\Sebastian O. Sas\documents\visual studio 2015\Projects\SpaceInvadersSimulator\SpaceInvadersSimulator\obj\Debug\SpaceInvadersSimulator.csprojResolveAssemblyReference.cache
+C:\Users\Sebastian O. Sas\documents\visual studio 2015\Projects\SpaceInvadersSimulator\SpaceInvadersSimulator\obj\Debug\SpaceInvadersSimulator.exe
+C:\Users\Sebastian O. Sas\documents\visual studio 2015\Projects\SpaceInvadersSimulator\SpaceInvadersSimulator\obj\Debug\SpaceInvadersSimulator.pdb
