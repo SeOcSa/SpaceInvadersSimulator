@@ -47,7 +47,6 @@ namespace SpaceInvadersSimulator
                 }
             }
         }
-
         public void runUnivers()
         {
             searchInUnivers();
@@ -83,25 +82,49 @@ namespace SpaceInvadersSimulator
 
             return beingTypes;
         }
-
         private void beingAction(object being)
         {
+            Boolean beingDied = false;
             while (true)
             {
-                int value = (int)being.GetType().GetMethod("growing").Invoke(being, null);
-                if (value <= 0)
+                foreach (var method in being.GetType().GetMethods())
                 {
-                    Console.WriteLine(being.GetType().Name + " has died.");
-                    break;
+                    if (method.Name.Equals("aging"))
+                    {
+                        #region call aging
+                        int value = (int)method.Invoke(being, null);
+                        if (value <= 0)
+                        {
+                            Console.WriteLine(being.GetType().Name + " has died.");
+                            beingDied = true;
+                            break;
+                        }
+                        else
+                        {
+                            Thread.Sleep(value * 1000);
+                            Console.WriteLine(being.GetType().Name + " has aged with " + value + " year/s");
+                        }
+                        #endregion
+                    }
+                    else
+                    {
+                        Random rand = new Random();
+                        if (rand.Next(1, 6) / 2 == 0 && (
+                            !method.Name.Equals("ToString") && !method.Name.Equals("Equals") && 
+                            !method.Name.Equals("GetHashCode") &&
+                            ! method.Name.Equals("GetType")))
+                        {
+                            method.Invoke(being, null);
+                        }
+                    }
                 }
-                else
+
+                if(beingDied)
                 {
-                    Thread.Sleep(value * 1000);
-                    Console.WriteLine(being.GetType().Name + " has aged with " + value + " year/s");
+                    break;
                 }
             }
         }
-
         private Object createBeing(IEnumerable<TypeInfo> being)
         {
             TypeInfo typeBeingInfo = being.First();
